@@ -16,15 +16,25 @@ public class WebController {
 	
 	@GetMapping("viewAllMeals")
 	public String viewAllMealPlan(Model model) {
+		if (repo.findAll().isEmpty()) {
+			return addNewIngredients(model);
+		}
 		model.addAttribute("ingrediants", repo.findAll());
 		return "mealPlanView";
 	}
 	@GetMapping("viewAllRecipes")
 	public String viewAllRecipes(Model model) {
+		if (repo.findAll().isEmpty()) {
+			return addNewRecipess(model);
+		}
 		model.addAttribute("recipes", repo.findAll());
 		return "recipeView";
 	}
 	
+	private String addNewRecipess(Model model) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	// Ingredients input
 	@GetMapping("/inputIngrediants")
 	public String addNewIngredients(Model model) {
