@@ -7,8 +7,12 @@
 <body>
 <form th:object="${newRecipe}" th:action="@{/updateRecipe/{id}(id=${newRecipe.id})}" method=POST>
 
+
 Name:<input name="name"size="20" th:field="*{name}"> <br />
 Category:<input name="category"size="20" th:field="*{category}"> <br />
+
+
+<input name="Submit" type="submit" value="submit" />
 
 </form>
 

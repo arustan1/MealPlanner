@@ -7,11 +7,13 @@
 <body>
 <form>
 <table>
-<tr th:each="currentRecipes : $(recipes)">
+<tr th:each="currentRecipes : ${recipes}">
  <td th:text="${currentRecipes.id}"/>
 	 <td th:text="${currentRecipes.name}"/>
 	 <td th:text="${currentRecipes.category}"/>
-	 <c:forEach th:text="${currentRecipes.ingrediantsList}"/>
+
+	 <c:forEach th:text="${currentRecipes.ingredientsList}"/>
+
 	 
 </tr>
 </table>
